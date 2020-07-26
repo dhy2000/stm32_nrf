@@ -139,7 +139,7 @@ int main(void)
 	  HAL_GPIO_TogglePin(GPIOB, GPIO_PIN_12);
 
 
-	  printf("Ready to send\n");
+	  printf("Ready to receive\n");
 	  uint8_t recv_flg = NRF24L01_RxPacket(buff);
 	  if (recv_flg == 0) {
 		  buff[32] = 0;
