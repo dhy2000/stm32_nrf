@@ -20,7 +20,7 @@ nRF24L01模块与MCU的通讯方式为SPI总线通讯，模块上的8个引脚�
 
 模块的引脚对应见资料图：
 
-![24L01](https://github.com/KICKOFFMYBUTT/stm32_nrf/raw/master/materials/24L01.jpg)
+![24L01](materials/24L01.jpg)
 
 单片机的引脚需要自行配置，配置方法如下：
 
