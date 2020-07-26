@@ -1,6 +1,6 @@
 # Readme
 
-照着csdn博客[传送门](https://blog.csdn.net/qq_36075612/article/details/10302749)（原博客应该是模仿了正点原子的教材）抄的STM32与nRF24L01无线模块的例程，实现板间通讯。
+照着csdn博客[传送门](https://blog.csdn.net/qq_36075612/article/details/103027490)（原博客应该是模仿了正点原子的教材）抄的STM32与nRF24L01无线模块的例程，实现板间通讯。
 
 本人使用的开发板为STM32F103C8T6，开发环境为CubeIDE。
 
