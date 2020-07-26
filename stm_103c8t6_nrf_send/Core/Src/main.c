@@ -62,20 +62,21 @@ static void MX_USART1_UART_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-
+// Global Variables for Serial USART1 Receive
 unsigned char   	uRx_Data[RECV_MAX] 	;
 unsigned char * 	pRx_Data			;
-unsigned int 	uLength				;
-unsigned int		recv_flag			;
+unsigned int 		uLength				;
+// unsigned int		recv_flag			;
 
-
+// Override this function in order to printf via USART1
 int __io_putchar(int ch) {
 	HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, HAL_MAX_DELAY);
 	return ch;
 }
 
 void dealWithRxBuffer(){
-
+	// When USART1 received something(stored in uRx_Data), interrupt will call this function.
+	// for example, you can output what you received via USART1, which will be shown on you computer.
 }
 
 uint8_t msg[] = "NRF Hello! - STM32.\n";
@@ -278,7 +279,7 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, SPI_CSN_Pin|SPI_CE_Pin|LED_Pin|POWER_ON_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, SPI_CSN_Pin|SPI_CE_Pin|LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : SPI_IRQ_Pin */
   GPIO_InitStruct.Pin = SPI_IRQ_Pin;
@@ -286,17 +287,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(SPI_IRQ_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : SPI_CSN_Pin SPI_CE_Pin LED_Pin POWER_ON_Pin */
-  GPIO_InitStruct.Pin = SPI_CSN_Pin|SPI_CE_Pin|LED_Pin|POWER_ON_Pin;
+  /*Configure GPIO pins : SPI_CSN_Pin SPI_CE_Pin LED_Pin */
+  GPIO_InitStruct.Pin = SPI_CSN_Pin|SPI_CE_Pin|LED_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : PB6 */
-  GPIO_InitStruct.Pin = GPIO_PIN_6;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }

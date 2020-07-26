@@ -66,8 +66,6 @@ void Error_Handler(void);
 #define SPI_CE_GPIO_Port GPIOB
 #define LED_Pin GPIO_PIN_12
 #define LED_GPIO_Port GPIOB
-#define POWER_ON_Pin GPIO_PIN_7
-#define POWER_ON_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 // UART 1 Recv
@@ -75,7 +73,7 @@ void Error_Handler(void);
 extern unsigned char   	uRx_Data[RECV_MAX] 	;
 extern unsigned char * 	pRx_Data			;
 extern unsigned int 	uLength				;
-extern unsigned int		recv_flag			;
+// extern unsigned int		recv_flag			;
 
 
 void dealWithRxBuffer();

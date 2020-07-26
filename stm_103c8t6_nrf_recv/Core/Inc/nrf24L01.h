@@ -100,8 +100,5 @@ uint8_t NRF24L01_TxPacket(uint8_t *txbuf);				//发送一个包的数据
 uint8_t NRF24L01_RxPacket(uint8_t *rxbuf);				//接收一个包的数据
 void NRF_LowPower_Mode(void);
 
-/*————————————————
-版权声明：本文为CSDN博主「Ch_champion」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/qq_36075612/article/details/103027490*/
 
 #endif /* INC_NRF24L01_H_ */
